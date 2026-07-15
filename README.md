@@ -33,24 +33,8 @@ PrIME evaluates whether an AI system correctly identifies:
 4. **Affected Nerve Root**
 5. **Tissue Origin**
 
-Rather than using simple binary correctness, PrIME awards partial credit for anatomically plausible responses and weights diagnostic components according to clinical importance.
+Unlike simple accuracy metrics, PrIME evaluates multiple clinically important dimensions of a diagnosis. 
 
----
-
-## Table of Contents
-
-1. [PrIME Components](#prime-components)
-2. [Pain Generator Categories](#pain-generator-categories)
-3. [Normalization Rules](#normalization-rules)
-4. [Scoring Framework](#scoring-framework)
-5. [Composite Score Calculation](#composite-score-calculation)
-6. [Ground Truth Construction](#ground-truth-construction)
-7. [Repository Contents](#repository-contents)
-8. [Intended Use](#intended-use)
-9. [Limitations](#limitations)
-10. [License](#license)
-
----
 
 ## PrIME Components
 
@@ -64,7 +48,25 @@ Rather than using simple binary correctness, PrIME awards partial credit for ana
 
 Each component receives a weighted score reflecting its clinical importance.
 
+The rubric explicitly incorporates partial credit for anatomically plausible but imperfect responses, enabling more nuanced benchmarking of AI performance than binary correct/incorrect scoring.
+
 ---
+
+## Table of Contents
+
+1. [Pain Generator Categories](#pain-generator-categories)
+2. [Normalization Rules](#normalization-rules)
+3. [Scoring Framework](#scoring-framework)
+4. [Composite Score Calculation](#composite-score-calculation)
+5. [Ground Truth Construction](#ground-truth-construction)
+6. [Repository Contents](#repository-contents)
+7. [Intended Use](#intended-use)
+8. [Limitations](#limitations)
+9. [License](#license)
+
+---
+
+
 
 ## Pain Generator Categories
 
