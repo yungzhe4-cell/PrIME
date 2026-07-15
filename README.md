@@ -144,12 +144,12 @@ To ensure consistent scoring across raters and AI outputs, synonymous clinical t
 
 | Input Label | Standardized Label |
 |-------------|-------------------|
-| L5 and S1 | L5 |
-| L4 or L5 | L4 |
-| L5 or S1 | L5 |
-| L3 or L4 | L3 |
-| L4 or L5 or S1 | L4 |
-| L5 or S1 or S2 | L5 |
+| L5 and S1 | L5, S1 |
+| L4 or L5 | L4, L5 |
+| L5 or S1 | L5, S1 |
+| L3 or L4 | L3, L4 |
+| L4 or L5 or S1 | L4, L5, S1 |
+| L5 or S1 or S2 | L5, S1, S2 |
 
 ---
 
