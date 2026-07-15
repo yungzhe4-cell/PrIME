@@ -215,18 +215,49 @@ PrIME = 0.35·PG + 0.25·Side + 0.20·Level + 0.10·NR + 0.10·DB
 
 Maximum possible score = 4.0
 
+Higher scores indicate greater concordance with expert spine specialist reference labels.
+
+---
+
+## Field-Level Scoring Rules
+
+
+| Field | Weight | Score 4 | Score 3 | Score 2 | Score 1 | Score 0 |
+|---------|---------|---------|---------|---------|---------|---------|
+| Pain Generator | 35% | Expert consensus match | Match to one expert | Same disease family, wrong subtype | Unrelated structural finding | Invalid or hallucinated answer |
+| Side | 25% | Expert consensus match | Match to one expert | Bilateral hedge when expert specifies unilateral side | Opposite laterality | Invalid side |
+| Level | 20% | Exact consensus level | Adjacent level or match to one expert | Two-level proximity | Three-level proximity | Impossible level |
+| Nerve Root | 10% | Exact consensus nerve | Adjacent root or match to one expert | Two-root proximity | Three-root proximity | Impossible nerve |
+| Disc/Bone | 10% | Consensus match | Match to one expert | "Disc or bone" hedge | Wrong category | Invalid designation |
+
+---
+
+## Clinical Weighting Rationale
+
+
+Weights were assigned according to expected downstream clinical consequences.
+
+
+| Field | Clinical Importance | Weight |
+|---------|--------------------|---------|
+| Pain Generator | Determines presumed symptomatic pathology and treatment pathway | 35% |
+| Side / Laterality | Influences procedural targeting and patient safety | 25% |
+| Spinal Level | Guides anatomic localization and intervention planning | 20% |
+| Nerve Root | Supports radiculopathy mapping and communication | 10% |
+| Disc/Bone Designation | Provides disease-category context | 10% |
+
 ---
 
 ## Ground Truth Construction
 
-Reference labels are derived from independent review by fellowship-trained musculoskeletal radiologists.
+Reference labels are derived from independent review by fellowship-trained musculoskeletal radiologist and spine pain specialist.
 
 The framework supports:
 
 - Individual expert labels
 - Consensus labels
 - Pooled expert labels
-- Secondary pain generators when applicable
+- Secondary pain generators and nerve distribution when applicable
 
 This structure allows evaluation against both strict consensus standards and broader expert agreement.
 
@@ -265,7 +296,7 @@ PrIME is intended for:
 
 ## Limitations
 
-PrIME measures concordance with expert-derived reference labels rather than clinical outcomes.
+PrIME measures agreement with expert-derived labels rather than clinical outcomes. 
 
 A high score indicates agreement with subspecialty radiologist assessment but does not demonstrate:
 
