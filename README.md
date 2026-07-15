@@ -252,7 +252,7 @@ Weights were assigned according to expected downstream clinical consequences.
 
 ## Ground Truth Construction
 
-Reference labels are derived from independent review by fellowship-trained musculoskeletal radiologist and spine pain specialist.
+Reference labels are derived from independent review by fellowship-trained musculoskeletal radiologist and anesthesia spine pain specialist.
 
 The framework supports:
 
