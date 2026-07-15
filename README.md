@@ -1,8 +1,8 @@
 # PrIME Rubric
 
-**Pain-Relevant Imaging Evaluation (PrIME)** is a clinically weighted benchmark for evaluating AI-generated lumbar spine pain classifications against expert musculoskeletal radiologist reference standards.
+**Pain-Relevant Imaging Evaluation (PrIME)** is a clinically weighted benchmark for evaluating AI-generated lumbar spine pain classifications against expert spine pain specialist reference standards.
 
-The rubric was developed to assess how accurately large language models (LLMs) identify clinically relevant pain generators and associated imaging findings from lumbar spine MRI reports. PrIME provides a reproducible framework for comparing AI outputs with subspecialty radiologist interpretations and consensus labels.
+The rubric was developed to assess how accurately large language models (LLMs) identify clinically relevant pain generators and their associated imaging characteristics from lumbar spine MRI reports. It was designed for benchmarking AI systems against specialist interpretation rather than replacing clinical judgment.
 
 ---
 
@@ -54,13 +54,15 @@ Rather than using simple binary correctness, PrIME awards partial credit for ana
 
 ## PrIME Components
 
-| Dimension | Clinical Question | Weight |
-|------------|------------------|---------|
-| Pain Generator | What pathology is causing the patient's pain? | 35% |
-| Laterality | Which side is affected? | 25% |
-| Anatomic Level | Where is the pathology located? | 20% |
-| Nerve Root | Which nerve root is involved? | 10% |
-| Tissue Origin | Is the pathology disc-related or bone/joint-related? | 10% |
+| Dimension | Clinical Question | Example Labels | Weight |
+|------------|------------------|---------------|---------|
+| Pain Generator | What pathology is causing the patient's pain? | Canal stenosis, foraminal stenosis, disc herniation, facet arthropathy | 35% |
+| Laterality | Which side is affected? | Right, Left, Midline/Bilateral | 25% |
+| Spinal Level | Where is the pathology located? | L1-2, L2-3, L3-4, L4-5, L5-S1 | 20% |
+| Nerve Root | Which nerve root is involved? | L1, L2, L3, L4, L5, S1, S2 | 10% |
+| Tissue Origin | Is the pathology primarily disc or bone/joint related? | Disc, Bone | 10% |
+
+Each component receives a weighted score reflecting its clinical importance.
 
 ---
 
@@ -199,17 +201,19 @@ The rubric supports partial credit when outputs are anatomically plausible but n
 
 ## Composite Score Calculation
 
-The overall PrIME score is calculated using weighted component scores:
+| Field | Abbreviation | Weight |
+|---------|-------------|---------|
+| Pain Generator | PG | 35% |
+| Side / Laterality | Side | 25% |
+| Spinal Level | Level | 20% |
+| Nerve Root | NR | 10% |
+| Disc/Bone Designation | DB | 10% |
 
-| Component | Weight |
-|------------|---------|
-| Pain Generator | 35% |
-| Laterality | 25% |
-| Anatomic Level | 20% |
-| Nerve Root | 10% |
-| Tissue Origin | 10% |
+### Composite Formula
 
-Composite scores are reported on a 0-100% scale.
+PrIME = 0.35·PG + 0.25·Side + 0.20·Level + 0.10·NR + 0.10·DB
+
+Maximum possible score = 4.0
 
 ---
 
@@ -232,8 +236,10 @@ This structure allows evaluation against both strict consensus standards and bro
 
 | File | Description |
 |--------|-------------|
-| `PrIME_Rubric.py` | Core implementation of the scoring framework |
-| `README.md` | Documentation and methodology overview |
+| `PrIME_Rubric.py` | Core implementation of the PrIME scoring framework |
+| `README.md` | Repository documentation and methodology overview |
+| `examples/` | Example inputs and scoring outputs (if provided) |
+| `sample_data/` | Demonstration dataset for testing the rubric (if provided) |
 
 Key features include:
 
