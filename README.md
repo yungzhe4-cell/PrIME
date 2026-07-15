@@ -1,6 +1,6 @@
 # PrIME Rubric
 
-**Pain-Relevant Imaging Evaluation (PrIME)** is a clinically weighted benchmark for evaluating AI-generated lumbar spine pain classifications against expert spine pain specialist reference standards.
+**Pain-Relevant Imaging Evaluation (PrIME)** is a clinically weighted benchmark for evaluating AI-generated lumbar spine pain classifications against expert spine specialist reference standards.
 
 The rubric was developed to assess how accurately large language models (LLMs) identify clinically relevant pain generators and their associated imaging characteristics from lumbar spine MRI reports. It was designed for benchmarking AI systems against specialist interpretation rather than replacing clinical judgment.
 
