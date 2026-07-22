@@ -19,7 +19,7 @@ If you use this rubric in your research, please cite:
 }
 ```
 
-*Please update the citation once the final AJR publication is available.*
+*Please update the citation once the final publication is available.*
 
 ---
 
