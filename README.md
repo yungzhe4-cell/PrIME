@@ -14,7 +14,7 @@ If you use this rubric in your research, please cite:
 @article{chen2026prime,
   title={Benchmarking Large Language Models for Classification of Lumbar Spine Pain Generators Using the PrIME Rubric},
   author={Chen, Yung Hsin and colleagues},
-  journal={American Journal of Roentgenology},
+  institution={Massachusetts General Hospital},
   year={2026}
 }
 ```
